@@ -1,27 +1,29 @@
-import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
-import Home from './component/home/Home'
-import Signup from './component/signup/Signup'
-import './component/home/bootstrap.min.css'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+ import Home from './component/home/Home';
+import Signup from './component/signup/Signup';
+import './bootstrap.min.css';
+import { BrowserRouter } from 'react-router-dom'
 function App() {
 
 return(
     <div className='app'>
       
-      <Link to='/'> Home </Link>
-      <Link to='/Signup'> Signup </Link>
+      <BrowserRouter>
       
-
+      {/* <Link to='/Signup'> Signup </Link> */}
+      
       <Switch>
-        <Route exact path='/'>
+         <Route exact path='/'>
           <Home/>
-        </Route>
+        </Route> 
 
         <Route exact path='/signup'>
-          <Signup />
+        <Signup/>
         </Route>
 
       </Switch>
+      </BrowserRouter>
 
     </div>
   )
